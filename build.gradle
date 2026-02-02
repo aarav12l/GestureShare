@@ -1,0 +1,48 @@
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.gestureshare'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.gestureshare"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // CameraX (Camera chalane ke liye)
+    implementation "androidx.camera:camera-camera2:1.3.1"
+    implementation "androidx.camera:camera-lifecycle:1.3.1"
+    implementation "androidx.camera:camera-view:1.3.1"
+
+    // MediaPipe (AI Gesture Detection ke liye)
+    implementation 'com.google.mediapipe:tasks-vision:0.10.0'
+
+    // Nearby Connections (Bina internet file bhejne ke liye)
+    implementation 'com.google.android.gms:play-services-nearby:19.0.0'
+}
+
